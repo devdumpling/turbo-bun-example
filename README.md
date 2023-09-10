@@ -1,4 +1,17 @@
-# Turborepo starter
+# Turborepo Bun Example
+
+This example init from the basic Next turborepo example: https://github.com/vercel/turbo/tree/main/examples/basic
+
+Instead of `nppx create-turbo@latest` I used `bunx create-turbo@latest` to init the repo.
+While that worked fine, turborepo doesn't seem to support bun yet really (it only allows pnpm, yarn, or npm).
+
+All I've done is swap out pnpm for bun and added the minimum necessary bun config. See the commits for details.
+
+## Below is the default turbostarter readme
+
+(Note it might not accurately reflect, I just left it for reference)
+
+----
 
 This is an official starter Turborepo.
 
