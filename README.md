@@ -7,6 +7,17 @@ While that worked fine, turborepo doesn't seem to support bun yet really (it onl
 
 All I've done is swap out pnpm for bun and added the minimum necessary bun config. See the commits for details.
 
+## What's Working
+
+1. `bun install` appears to be fine
+
+## What's Not Working
+
+1. Running `bun run` from anywhere but the root fails, even with something simple: `bun eslint --version`
+2. Any TurboRepo command fails without a `packageManager` specified in `package.json` (seems like bun isn't really supported yet)
+
+Haven't tried much beyond that yet, but will report back as I do.
+
 ## Below is the default turbostarter readme
 
 (Note it might not accurately reflect, I just left it for reference)
