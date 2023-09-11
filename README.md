@@ -2,7 +2,7 @@
 
 This example init from the basic Next turborepo example: https://github.com/vercel/turbo/tree/main/examples/basic
 
-Instead of `nppx create-turbo@latest` I used `bunx create-turbo@latest` to init the repo.
+Instead of `npx create-turbo@latest` I used `bunx create-turbo@latest` to init the repo.
 While that worked fine, turborepo doesn't seem to support bun yet really (it only allows pnpm, yarn, or npm).
 
 All I've done is swap out pnpm for bun and added the minimum necessary bun config. See the commits for details.
@@ -15,6 +15,15 @@ All I've done is swap out pnpm for bun and added the minimum necessary bun confi
 
 1. Running `bun run` from anywhere but the root fails, even with something simple: `bun eslint --version`
 2. Any TurboRepo command fails without a `packageManager` specified in `package.json` (seems like bun isn't really supported yet)
+
+## Reproduction Steps
+
+1. `bun install`
+2. `bun run eslint --version` (from root succeeds)
+3. `cd packages/ui` (or any other package)
+4. `bun run eslint --version` (fails)
+
+You can try this with any script. For example, I added a simple `clean` script that just rm's node_modules. It works from the root, but not from any package.
 
 Haven't tried much beyond that yet, but will report back as I do.
 
